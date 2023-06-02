@@ -14,7 +14,6 @@
     <div class="video-container">
         <video autoplay loop muted>
             <source src="videos/video_hack.mp4" type="video/mp4">
-            <!-- Ajoutez d'autres sources vidéo pour une compatibilité multi-navigateurs -->
         </video>
     </div>
 
@@ -31,12 +30,14 @@
         <div class="progress-bar">
             <div class="progress"></div>
         </div>
+        <img class="smiley" src="images/smile_modif.png" alt="smiley">
     </div>
 
     <script>
         function randomizeProgress() {
             var progressElement = document.querySelector('.progress');
             var progressTextElement = document.querySelector('.progress-text');
+            var smileyElement = document.querySelector('.smiley');
             var progress = 0;
             var interval = setInterval(function() {
                 progress += Math.random() * 10;
@@ -45,8 +46,9 @@
                 if (progress >= 100) {
                     clearInterval(interval);
                     progressTextElement.textContent = 'Téléchargement terminé !';
+                    smileyElement.classList.add('grow');
                 }
-            }, 500);
+            }, 800);
         }
         window.onload = randomizeProgress;
     </script>
