@@ -1,12 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- mettre une image dans le titre -->
+    <link rel="icon" href="images/hacker.png" />
+
+    <title>Hack!</title>
+    <!-- Style du fichier index.css -->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
+
+
 <body>
-    <h1>Test 2</h1>
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="videos/video_hack.mp4" type="video/mp4">
+            <!-- Ajoutez d'autres sources vidéo pour une compatibilité multi-navigateurs -->
+        </video>
+    </div>
+
+    <!-- mettre l'image hacker2 rognée -->
+    <div class="hacker2">
+        <img src="images/hacker2.png">
+    </div>
+
+    <h1>HACKING!</h1>
+
+
+    <div class="progress-container">
+        <div class="progress-text">Téléchargement de vos données personnelles...</div>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+    </div>
+
+    <script>
+        function randomizeProgress() {
+            var progressElement = document.querySelector('.progress');
+            var progressTextElement = document.querySelector('.progress-text');
+            var progress = 0;
+            var interval = setInterval(function() {
+                progress += Math.random() * 10;
+                progressElement.style.width = progress + '%';
+                progressTextElement.textContent = 'Téléchargement de vos données personnelles... ' + Math.floor(progress) + '%';
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    progressTextElement.textContent = 'Téléchargement terminé !';
+                }
+            }, 500);
+        }
+        window.onload = randomizeProgress;
+    </script>
 </body>
+
 </html>
