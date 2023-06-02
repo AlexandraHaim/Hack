@@ -28,7 +28,7 @@ h1 {
     height: 200px;
     border-radius: 50%;
     overflow: hidden;
-    margin: 0 44%;
+    margin: 0 auto;
 }
 
 .hacker2 img {
@@ -58,7 +58,7 @@ video {
     height: 70px;
     position: relative;
     text-align: center;
-    margin: 0 38.5%;
+    margin: 0 auto;
 }
 
 .progress-bar {
